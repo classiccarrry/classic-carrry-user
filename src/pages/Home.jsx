@@ -48,16 +48,35 @@ const Home = () => {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white">
-        <div className="text-center">
-          <i className="fas fa-spinner fa-spin text-4xl text-[#8B7355] mb-4"></i>
-          <p className="text-gray-600">Loading...</p>
+        <div className="text-center relative">
+          {/* Animated background */}
+          <div className="absolute inset-0 -z-10">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#8B7355]/5 rounded-full blur-3xl animate-pulse"></div>
+          </div>
+
+          {/* Loading spinner */}
+          <div className="w-20 h-20 mx-auto mb-6 relative">
+            <div className="absolute inset-0 border-4 border-gray-200 rounded-full"></div>
+            <div className="absolute inset-0 border-4 border-transparent border-t-[#8B7355] rounded-full animate-spin"></div>
+          </div>
+
+          {/* Text */}
+          <h3 className="text-xl font-semibold text-gray-900 mb-2">Loading Products</h3>
+          <p className="text-gray-600 mb-4">Please wait while we prepare everything for you...</p>
+          
+          {/* Loading dots */}
+          <div className="flex justify-center gap-2">
+            <div className="w-2 h-2 bg-[#8B7355] rounded-full animate-bounce"></div>
+            <div className="w-2 h-2 bg-[#8B7355] rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+            <div className="w-2 h-2 bg-[#8B7355] rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="bg-white">
+    <div className="bg-white animate-fadeIn">
       {/* Hero Carousel */}
       <HeroCarousel />
 

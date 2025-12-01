@@ -694,6 +694,15 @@ input[type="number"] {
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes emoji-float {
   0% {
     transform: translateY(-20px) rotate(0deg);
@@ -736,4 +745,22 @@ input[type="number"] {
 
 .animate-confetti {
   animation: confetti 3s ease-in infinite;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Circular progress ring animation */
+@keyframes progress-ring {
+  0% {
+    stroke-dashoffset: 283;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-progress-ring {
+  animation: progress-ring 2s ease-in-out infinite;
 }
