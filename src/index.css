@@ -56,6 +56,40 @@ body {
   scroll-behavior: smooth;
   background: #FAFAFA;
   color: #2C2C2C;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Improved Typography */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* Better Focus States */
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Smooth Transitions */
+button, a, input, select, textarea {
+  transition: all 0.3s ease;
+}
+
+/* Card Shadows */
+.card-shadow {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card-shadow-hover:hover {
+  box-shadow: 0 10px 25px rgba(139, 115, 85, 0.15);
 }
 
 /* Ensure consistent container behavior across all browsers */

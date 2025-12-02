@@ -127,13 +127,13 @@ const ProductDetail = () => {
           <nav className="flex items-center space-x-2 text-xs text-gray-600">
             <Link to="/" className="hover:text-[#8B7355] transition-colors">Home</Link>
             <i className="fas fa-chevron-right text-xs"></i>
-            {product.categoryName && (
+            {(product.category?.name || product.categoryName) && (
               <>
                 <Link 
-                  to={`/category/${product.categorySlug || product.categoryName.toLowerCase().replace(/\s+/g, '-')}`} 
+                  to={`/category/${product.category?.slug || product.categorySlug || (product.category?.name || product.categoryName).toLowerCase().replace(/\s+/g, '-')}`} 
                   className="hover:text-[#8B7355] transition-colors"
                 >
-                  {product.categoryName}
+                  {product.category?.name || product.categoryName}
                 </Link>
                 <i className="fas fa-chevron-right text-xs"></i>
               </>
